@@ -1,0 +1,32 @@
+#include "Keyboard.h"
+
+const int buttonPin[] = {2, 3, 4};
+int pinCount = 4;
+int buttonState[] = {0, 0, 0};
+int prevButtonState[] = {HIGH, HIGH, HIGH};
+
+long lastDebounceTime[] = {0, 0, 0};
+long debounceDelay = 50;
+
+void setup()
+
+int outputAction(int currentButton())
+{
+    switch (currentButton)
+    {
+        case 1:
+            Keyboard.press('h');
+            break;
+        case 2:
+            Keyboard.press('k');
+            break;
+        case 3:
+            Keyboard.press('l');
+            break;
+        default:
+            return;
+    }
+
+    delay(100);
+    Keyboard.releaseAll();
+}
